@@ -92,3 +92,14 @@ input[type="text"] {
   border-radius: 20px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 576px){
+  .delete-btn {
+    background-color: red;
+    margin-left: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+}
