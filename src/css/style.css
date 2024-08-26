@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: "Saira Condensed", sans-serif;
+  background-color: hsl(253, 65%, 73%);
+}
+
+/* From Uiverse.io by adamgiebl */
+.btn {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 16px;
+  margin-left: 0.5em;
+}
+
+.btn svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.btn:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+.btn:hover span {
+  transform: translateX(7px);
+}
+
+.todo-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-header h1 {
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  margin: 8rem auto;
+}
+
+input[type="text"] {
+  width: 30%;
+  height: 55px;
+  border-radius: 20px;
+  outline: none;
+  font-family: "Saira Condensed", sans-serif;
+  border: none;
+  padding-left: 2rem;
+  font-size: 1rem;
+}
+
+.todo-tasks {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 20px;
+  width: 30%;
+  height: 20px;
+  margin: auto auto 2em auto;
+  padding: 1.5rem 3rem;
+  /* height: 55px; */
+}
+
+.todo-task {
+  margin-top: 5rem;
+}
+
+.delete-btn {
+  color: #fff;
+  position: absolute;
+  right: 32rem;
+  background-color: red;
+  margin-left: 1em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
