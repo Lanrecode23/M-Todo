@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../css/style.css';
+import TodoContext from '../context/TodoContexts';
 
 function TodoList() {
-    const [tasks, setTasks] = useState([])
+
     const [newTask, setnewTask] = useState(" ")
+
+    const {todos, addTodo, removeTodo} = useContext(TodoContext)
 
     const handleInputChange = (e) => {
         setnewTask(e.target.value)
@@ -17,13 +20,12 @@ function TodoList() {
                 icon: "success",
                 button: "Ok",
             });
-            setTasks([...tasks, newTask])
+           addTodo([...todos, newTask])
             setnewTask("")
         }
     }
 
-    const deleteTask = (index) => {
-        const updateTask = tasks.filter((element, i) => i !== index)
+    const deleteTask = (id) => {
         swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this imaginary file!",
@@ -36,7 +38,7 @@ function TodoList() {
               swal("Your task has been deleted!", {
                 icon: "success",
               });
-              setTasks(updateTask)
+              removeTodo(id)
             } else {
               swal("Your task is safe!");
             }
@@ -68,7 +70,7 @@ function TodoList() {
 
             </div>
             <div className="todo-task">
-                {tasks.map((task, index) => (
+                {todos.map((task, index) => (
                     <div key={index} className='todo-tasks'>
                         <span>{task}</span>
                         <button onClick={() => deleteTask(index)} className='delete-btn'>Delete</button>

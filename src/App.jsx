@@ -1,13 +1,14 @@
-import React from 'react'
-import TodoList from './components/TodoList'
 
+import UserContextProvider from './context/UserContextProvider';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
-    <div>
+    <UserContextProvider>
       <TodoList/>
-    </div>
-  )
+    </UserContextProvider>
+  );
 }
+
 
 export default App
